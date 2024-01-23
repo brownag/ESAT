@@ -1,0 +1,18 @@
+Package: ESAT
+Type: Package
+Title: Ecological Site Analytical Tools
+Version: 0.1.0
+Author: Andrew G. Brown
+Maintainer: Andrew G. Brown <andrew.g.brown@usda.gov>
+Description: Provides tools for analysis of the tabular and spatial configuration of Ecological Site Concepts in SSURGO (Soil Survey Geographic Database) products. 
+License: CC0
+Encoding: UTF-8
+URL: https://github.com/brownag/ESAT
+Language: en-US
+LazyData: true
+RoxygenNote: 7.3.0
+Roxygen: list(markdown = TRUE)
+Imports: 
+    sf,
+    data.table,
+    soilDB (>= 2.8.1)

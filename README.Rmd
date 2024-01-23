@@ -1,0 +1,55 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ESAT (Ecological Site Analytical Tools)
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of ESAT is to provide tools for analysis of the tabular and spatial configuration of Ecological Site Concepts in SSURGO (Soil Survey Geographic Database) products. 
+..
+
+## Installation
+
+You can install the development version of ESAT like so:
+
+``` r
+remotes::install_github("brownag/ESAT")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(ESAT)
+
+# get "all" condition aggregation via Soil Data Access for selected soil survey area(s)
+x <- es_aggregate_ssurgo("CA041")
+
+# decompose dominant condition site codes 
+es_decompose_site_code(x$site1)
+
+# check aggregate condition percentage
+x$agg_pct_r <- es_calculate_aggregate_sitepct(x)
+table(x$agg_pct_r)
+
+# inspect one mapunit with aggregate site percentage <100%
+x[which(x$agg_pct_r == 80), ]
+```
+
+## Spatial Check Example
+
+_TODO_
